@@ -24,3 +24,6 @@ hs_err_pid*
 
 # idea folder
 .idea/
+
+# out folder containing .class file
+out/
