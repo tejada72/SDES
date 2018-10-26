@@ -17,6 +17,7 @@ public class SDES {
      *
      * @param plainText Input text to encrypt
      * @return The cipher text
+     * @author Alex Tejada
      */
     public byte[] encrypt(String plainText) {
         String[] input = plainText.split(" ");
@@ -33,6 +34,7 @@ public class SDES {
      *
      * @param input a single byte as plain text
      * @return a single byte as cipher text
+     * @author Alex Tejada
      */
     //TODO finish this method
     public byte encrypt(byte input) {
@@ -58,6 +60,7 @@ public class SDES {
      * @param x first boolean array
      * @param k second boolean array to be use as the key
      * @return The resulting boolean array after applying the round function in the SDES algorithm.
+     * @author Alex Tejada
      */
     public boolean[] f(boolean[] x, boolean[] k) {
         // L(x) XOR F(k,x) || R(x)
@@ -95,6 +98,7 @@ public class SDES {
      * @param x first boolean array
      * @param y second boolean array
      * @return the result of x XOR y
+     * @author Alex Tejada
      */
     public boolean[] xor(boolean[] x, boolean[] y) {
         int range = getSmallerLength(x,y);
@@ -114,6 +118,7 @@ public class SDES {
      * @param x first boolean array
      * @param y second boolean array
      * @return a boolean[] with the concatenation of the first array and second array
+     * @author Alex Tejada
      */
     public boolean[] concat(boolean[] x, boolean[] y) {
         int range = x.length+y.length;
@@ -125,7 +130,6 @@ public class SDES {
             else
                 result[index] = y[index-x.length];
         }
-
         return result;
     }
 
@@ -135,6 +139,7 @@ public class SDES {
      * @param x boolean array
      * @param y boolean array
      * @return int representing the smaller length
+     * @author Alex Tejada
      */
     private int getSmallerLength(boolean[] x, boolean[] y) {
         if(x.length > y.length)
