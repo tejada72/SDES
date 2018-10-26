@@ -10,6 +10,35 @@ import java.util.ArrayList;
  */
 public class SDES {
 
+
+    /**
+     * Encrypt the given string using SDES and returns the cipher text.
+     *
+     * @param plainText Input text to encrypt
+     * @return The cipher text
+     */
+    public byte[] encrypt(String plainText) {
+        String[] input = plainText.split(" ");
+        byte[] result = new byte[input.length];
+
+        for(int index = 0; index < input.length; index++) {
+            result[index] = encrypt(Byte.parseByte(input[index]));
+        }
+        return result;
+    }
+
+
+    /**
+     * Encrypt a single byte using SDES
+     *
+     * @param input
+     * @return
+     */
+    //TODO finish this method
+    public byte encrypt(byte input) {
+        return 0;
+    }
+
     /**
      * Exclusive Or function
      *
