@@ -10,6 +10,9 @@ import java.util.ArrayList;
  */
 public class SDES {
 
+    //TODO
+    boolean[] key;
+
 
     /**
      * Encrypt the given string using SDES and returns the cipher text.
@@ -31,11 +34,48 @@ public class SDES {
     /**
      * Encrypt a single byte using SDES
      *
-     * @param input
-     * @return
+     * @param input a single byte as plain text
+     * @return a single byte as cipher text
      */
     //TODO finish this method
     public byte encrypt(byte input) {
+        int[] permutation = new int[]{1,5,2,0,3,7,4,6}; //TODO Can someone double check me on this permutation?
+        boolean[] result = byteToBitArray(input, 8);
+        result = expPerm(result,permutation);
+        result = f(result,key);
+        result = concat(rh(result),lh(result));
+        result = f(result,key);
+        result = expPerm(result,permutation);
+        return bitArrayToByte(result);
+    }
+
+    //TODO Documentation & implementation
+    public boolean[] byteToBitArray(byte b, int size) {
+        return null;
+    }
+
+    //TODO Documentation & implementation
+    public boolean[] f(boolean[] x, boolean[] key) {
+        return null;
+    }
+
+    //TODO Documentation & implementation
+    public boolean[] lh(boolean[] input) {
+        return null;
+    }
+
+    //TODO Documentation & implementation
+    public boolean[] rh(boolean[] input) {
+        return null;
+    }
+
+    //TODO Documentation & implementation
+    public boolean[] expPerm(boolean[] inp, int[] epv) {
+        return null;
+    }
+
+    //TODO Documentation & implementation
+    public byte bitArrayToByte(boolean[] inp) {
         return 0;
     }
 
