@@ -18,7 +18,7 @@ public class Driver
         byte [] cipher;
         while (plain.length() > 0)
         {
-            //cipher = sdes.encrypt (plain);
+            cipher = sdes.encrypt (plain);
             System.out.print ("Cipher is ");
             //sdes.show(cipher);
             //System.out.println (sdes.byteArrayToString (sdes.decrypt (cipher)));

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * Simplified Data Encryption Standard is a symmetric-key algorithm for the encryption of electronic data.
  *
@@ -30,7 +28,6 @@ public class SDES {
         return result;
     }
 
-
     /**
      * Encrypt a single byte using SDES
      *
@@ -54,9 +51,17 @@ public class SDES {
         return null;
     }
 
-    //TODO Documentation & implementation
-    public boolean[] f(boolean[] x, boolean[] key) {
-        return null;
+    /**
+     *  This is the 'round' function.
+     *  It is its own inverse. f(x,k) = (L(x) xor F(R(x), k)) || R(x)
+     *
+     * @param x first boolean array
+     * @param k second boolean array to be use as the key
+     * @return The resulting boolean array after applying the round function in the SDES algorithm.
+     */
+    public boolean[] f(boolean[] x, boolean[] k) {
+        // L(x) XOR F(k,x) || R(x)
+       return concat(xor(lh(x),feistel(k,rh(x))),rh(x));
     }
 
     //TODO Documentation & implementation
@@ -79,11 +84,16 @@ public class SDES {
         return 0;
     }
 
+    //TODO Documentation & implementation
+    public boolean[] feistel(boolean[] k, boolean[] x) {
+        return null;
+    }
+
     /**
      * Exclusive Or function
      *
-     * @param x first array of boolean
-     * @param y second array of boolean
+     * @param x first boolean array
+     * @param y second boolean array
      * @return the result of x XOR y
      */
     public boolean[] xor(boolean[] x, boolean[] y) {
@@ -101,8 +111,8 @@ public class SDES {
     /**
      * Concatenate the second array at the end of the first array.
      *
-     * @param x first array of boolean
-     * @param y second array of boolean
+     * @param x first boolean array
+     * @param y second boolean array
      * @return a boolean[] with the concatenation of the first array and second array
      */
     public boolean[] concat(boolean[] x, boolean[] y) {
@@ -120,10 +130,10 @@ public class SDES {
     }
 
     /**
-     * Return the smaller length of 2 array of booleans.
+     * Return the smaller length of the 2 boolean array.
      *
-     * @param x array of boolean
-     * @param y array of boolean
+     * @param x boolean array
+     * @param y boolean array
      * @return int representing the smaller length
      */
     private int getSmallerLength(boolean[] x, boolean[] y) {
