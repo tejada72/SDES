@@ -48,7 +48,11 @@ public class SDES {
         return bitArrayToByte(result);
     }
 
-    //TODO Documentation & implementation
+    /**TODO:Add for loop to return bitArray on byte slices
+    
+        @author Aaron Alnutt
+        
+     */
     public boolean[] byteToBitArray(byte b, int size) {
         return null;
     }
@@ -77,12 +81,16 @@ public class SDES {
         return null;
     }
 
-    //TODO Documentation & implementation
+    /** TODO: return bit array based on given epv (indexes) 
+     * @author Aaron Alnutt
+     */
     public boolean[] expPerm(boolean[] inp, int[] epv) {
         return null;
     }
 
-    //TODO Documentation & implementation
+    /** TODO: return byte from BitArray
+     * @author Aaron Alnutt
+     */
     public byte bitArrayToByte(boolean[] inp) {
         return 0;
     }
