@@ -48,13 +48,21 @@ public class SDES {
         return bitArrayToByte(result);
     }
 
-    /**TODO:Add for loop to return bitArray on byte slices
-    
-        @author Aaron Alnutt
-        
+     /**
+     * Convert the given byte to a bit array, of the given size.
+     *
+     * @param b byte to convert.
+     * @param size The size of the resulting bit array. The operator >>> can be used for an unsigned right shift.
+     * @return the boolean array from given byte b.
+     * @author Aaron Alnutt
      */
     public boolean[] byteToBitArray(byte b, int size) {
-        return null;
+        boolean[] returnBoolArray = new boolean[size];
+        for (int i = 0; i < size; i++)
+        {
+            returnBoolArray[i] = (b & (int)Math.pow(2, (double)i)) != 0;
+        }
+        return returnBoolArray;
     }
 
     /**
@@ -105,7 +113,6 @@ public class SDES {
      */
     public byte bitArrayToByte(boolean[] inp) {
         byte returnByte = 0;
-        String bitString = "";
         for (int i = 0; i < inp.length; i++)
         {
             returnByte |= 
