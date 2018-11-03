@@ -88,11 +88,21 @@ public class SDES {
         return null;
     }
 
-    /** TODO: return byte from BitArray
+    /** 
+     * Convert boolean[] to byte without size restriction.
+     * @param inp array of booleans
+     * @return the byte from inp
      * @author Aaron Alnutt
      */
     public byte bitArrayToByte(boolean[] inp) {
-        return 0;
+        byte returnByte = 0;
+        String bitString = "";
+        for (int i = 0; i < inp.length; i++)
+        {
+            returnByte |= 
+                (inp[i] ? 1 : 0) << i;
+        }
+        return returnByte;
     }
 
     //TODO Documentation & implementation
