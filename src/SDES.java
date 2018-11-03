@@ -81,15 +81,24 @@ public class SDES {
         return null;
     }
 
-    /** TODO: return bit array based on given epv (indexes) 
+    /** 
+     * Expand and/or permute and/or select from the bit array, inp, producing an expanded/permuted/selected bit array.
+     * @param inp A bit array represented as booleans, true=1, false=0.
+     * @param epv An expansion and/or permutation and/or selection vector; all numbers in epv must be in the range 0..inp.length-1, i.e. they must be valid subscripts.
+     * @return The permuted/expanded/selected bit array, or null if there is an error.
      * @author Aaron Alnutt
      */
     public boolean[] expPerm(boolean[] inp, int[] epv) {
-        return null;
+        boolean[] returnPerm = new boolean[epv.length];
+        for(int i = 0; i < epv.length; i++)
+        {
+            returnPerm[i] = inp[epv[i]];
+        }
+        return returnPerm;
     }
 
     /** 
-     * Convert boolean[] to byte without size restriction.
+     * Convert the given bit array to a single byte.
      * @param inp array of booleans
      * @return the byte from inp
      * @author Aaron Alnutt
