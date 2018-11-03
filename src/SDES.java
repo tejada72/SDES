@@ -181,4 +181,37 @@ public class SDES {
         return x.length;
     }
 
+    /**
+     * System.out.println the given boolean[]
+     *
+     * @param x booealn array to print.
+     * @author Aaron Alnutt
+     */
+    public void show(boolean[] inp)
+    {
+        String returnStr = "";
+        for(int i = 0; i < inp.length;i++)
+        {
+            returnStr += inp[i] ? "1" : "0";
+        }
+        System.out.println(returnStr);
+    }
+
+     /**
+     * System.out.println the given byte[]
+     *
+     * @param x byte array to print.
+     * @author Aaron Alnutt
+     */
+    public void show(byte[] inp)
+    {
+        String returnStr = "";
+        for(int i = 0; i < inp.length;i++)
+        {
+            returnStr += inp[i];
+        }
+        //using hex-notation to make it more readable
+        System.out.println("0x" + returnStr);
+    }
+
 }
