@@ -11,17 +11,22 @@ public class Driver
         SDES sdes = new SDES();
 
         Scanner scanner = new Scanner (System.in);
-
+        sdes.getKey10(scanner);
         String plain = "x";
         System.out.println ("Enter plain text, or hit 'Enter' to terminate");
         plain = scanner.nextLine();
         byte [] cipher;
+        /**byte [] cipher = {-115, -17, -47, -113, -43, -47, 15, 84, -43, -113, -17, 84, -43, 79, 58, 15, 64, -113, -43, 65, -47, 127, 84, 64, -43,
+         -61, 79, -43, 93, -61, -14, 15, -43, -113, 84, -47, 127, -43, 127, 84, 127, 10, 84, 15, 64, 43};*/
         while (plain.length() > 0)
         {
             cipher = sdes.encrypt (plain);
             System.out.print ("Cipher is ");
-            //sdes.show(cipher);
-            //System.out.println (sdes.byteArrayToString (sdes.decrypt (cipher)));
+            sdes.show(cipher);
+            byte[] plainText = sdes.decrypt(cipher);
+            System.out.print ("Plain is " + plainText);
+            sdes.show(plainText);
+            System.out.println (sdes.byteArrayToString (sdes.decrypt (cipher)));
             System.out.println ("Enter plain text, or hit 'Enter' to terminate");
             plain = scanner.nextLine();
         }
