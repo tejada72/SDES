@@ -39,6 +39,24 @@ public class SDES {
     }
 
     /**
+     * Convert the given string into a bit array
+     *
+     * @param input String
+     * @return array of boolean
+     * @author Alex Tejada
+     */
+    public byte[] stringToBitArray(String input) {
+        String[] splitInput = input.split(" ");
+        byte[] result = new byte[splitInput.length];
+
+        for(int index = 0; index < splitInput.length; index++) {
+            result[index] = Byte.parseByte(splitInput[index]);
+        }
+
+        return result;
+    }
+
+    /**
      * Encrypt a single byte using SDES
      *
      * @param input a single byte as plain text
@@ -63,6 +81,7 @@ public class SDES {
      */
     public void getKey10(Scanner scanner) {
         key = new boolean[10];
+        System.out.println("Insert key: ");
         String input = scanner.nextLine();
         //Storing booleans in the array
         for (int i = 0; i < 10; i++) {
@@ -325,7 +344,7 @@ public class SDES {
         String returnStr = "";
         for(int i = 0; i < inp.length;i++)
         {
-            returnStr += inp[i];
+            returnStr += inp[i] + " ";
         }
         //using hex-notation to make it more readable
         System.out.println("0x" + returnStr);
