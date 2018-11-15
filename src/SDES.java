@@ -83,6 +83,7 @@ public class SDES {
         key = new boolean[10];
         System.out.println("Insert key: ");
         String input = scanner.nextLine();
+        input = input.replace(" ","");
         //Storing booleans in the array
         for (int i = 0; i < 10; i++) {
             if (input.charAt(i) == '0')

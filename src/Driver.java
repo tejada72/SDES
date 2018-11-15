@@ -29,7 +29,7 @@ public class Driver
             System.out.print ("Plain is ");
             sdes.show(plainText);
             //sdes.show(sdes.decrypt (cipher));
-            System.out.println ("Enter plain text, or hit 'Enter' to terminate");
+            System.out.println ("Enter cipher text, or hit 'Enter' to terminate");
             cipherText = scanner.nextLine();
         }
     }
