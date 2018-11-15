@@ -224,7 +224,7 @@ public class SDES {
         boolean[] rightHalf = new boolean[4];
 
         for (int i = 0; i <rightHalf.length; i++) {
-            rightHalf[i] = inp[i];
+            rightHalf[i] = inp[i + 4];
         }
 
         return rightHalf;
