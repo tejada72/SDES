@@ -348,7 +348,7 @@ public class SDES {
             returnStr += inp[i] + " ";
         }
         //using hex-notation to make it more readable
-        System.out.println("0x" + returnStr);
+        System.out.println(returnStr);
     }
 
     /**Converts the given byte array to a String
