@@ -28,7 +28,7 @@ public class Driver
             byte[] plainText = sdes.decrypt(cipher);
             System.out.print ("Plain is ");
             sdes.show(plainText);
-            sdes.show(sdes.decrypt (cipher));
+            //sdes.show(sdes.decrypt (cipher));
             System.out.println ("Enter plain text, or hit 'Enter' to terminate");
             cipherText = scanner.nextLine();
         }
